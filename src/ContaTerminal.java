@@ -1,9 +1,10 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
 
         System.out.println("Por favor, digite o número da conta:");
         int numero = sc.nextInt();
@@ -17,7 +18,7 @@ public class ContaTerminal {
 
         System.out.println("Por favor, informe o saldo:");
         while (!sc.hasNextDouble()) {
-            System.out.println("Entrada inválida. Por favor, digite um número válido para o saldo. Exemplo: 100,00");
+            System.out.println("Entrada inválida. Por favor, digite um número válido para o saldo. Exemplo: 100.00");
             sc.next();
         }
         double saldo = sc.nextDouble();
